@@ -1,9 +1,12 @@
-- name: Create a login user
-    user:
-     name: teste1
-     password: 'Mudar@123'
-     state: present
-     shell: /bin/bash       # Defaults to /bin/bash
-     system: no             # Defaults to no
-     createhome: yes        # Defaults to yes
-     home: /home/teste1  # Defaults to /home/<username>
+- name: Create user
+  hosts: all
+  tasks:
+   - name: Create a login user
+     user:
+      name: teste1
+      password: 'Mudar@123'
+      state: present
+      shell: /bin/bash       # Defaults to /bin/bash
+      system: no             # Defaults to no
+      createhome: yes        # Defaults to yes
+      home: /home/teste1  # Defaults to /home/<username>

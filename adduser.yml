@@ -3,7 +3,7 @@
   tasks:
     - name: Hello Message
       user:
-       name: teste3
+       name: teste4
        password: 'Mudar@123'
        state: present
        shell: /bin/bash       # Defaults to /bin/bash

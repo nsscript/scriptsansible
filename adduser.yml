@@ -1,5 +1,5 @@
 - name: Create user
-  hosts: {{ HOST_IP }}
+  hosts: {{ HOSTIP }}
     - name: Hello Message
       user:
        name: {{ USER_NAME_AWX }}

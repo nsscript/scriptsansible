@@ -1,11 +1,9 @@
 - name: Create user
-  hosts: all
-  become: true
-  tasks:
+  hosts: {{ HOST_IP }}
     - name: Hello Message
       user:
-       name: teste10final
-       password: 'Mudar@123'
+       name: {{ USER_NAME_AWX }}
+       password: {{ USER_PASSWORD_AWX }}
        state: present
        shell: /bin/bash       # Defaults to /bin/bash
        system: no             # Defaults to no

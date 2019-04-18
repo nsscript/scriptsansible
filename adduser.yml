@@ -1,5 +1,4 @@
----
- - name: Create a login user
+- name: Create a login user
      user:
       name: teste1
       password: 'Mudar@123'

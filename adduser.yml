@@ -1,4 +1,7 @@
-    - name: hello
+- name: Adduser
+  hosts: all
+  tasks:
+   - name: Adduser
       user:
        name: "{{ username }}"
        password: "{{ password }}"

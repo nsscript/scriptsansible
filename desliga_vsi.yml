@@ -2,6 +2,6 @@
   hosts: all
   tasks:
     - name: Desliga_VSI
-      command: '/bin/bash /scripts/list_vsi.sh'
+      shell: '/scripts/./list_vsi.sh'
    
  

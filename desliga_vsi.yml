@@ -3,5 +3,8 @@
   tasks:
     - name: Desliga_VSI
       shell: '/scripts/./list_vsi.sh'
+      shell: '/scripts/./list2_vsi.sh'
+      shell: '/scripts/./list3_vsi.sh'
+      
    
  

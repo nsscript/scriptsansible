@@ -2,7 +2,6 @@
   hosts: all
   tasks:
     - name: Desliga_VSI
-      command: '/bin/bash echo " " | ibmcloud login --apikey {{ apikey }}'
-      command: 'ibmcloud sl vs list > /scripts/saida'
-      command: 'ibmcloud logout'
+      script: /scripts/list_vsi.sh
+   
  

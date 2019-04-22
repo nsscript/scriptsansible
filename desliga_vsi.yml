@@ -2,11 +2,5 @@
   hosts: all
   tasks:
     - name: Desliga_VSI
-      user:
-       name: "{{ username }}"
-       password: "{{ password }}"
-       state: present
-       shell: /bin/bash       # Defaults to /bin/bash
-       system: no             # Defaults to no
-       createhome: yes        # Defaults to yes
-       home: /home/{{ username }}  # Defaults to /home/<username>
+      command: '/bin/bash /scripts/list_vsi.sh'
+ 

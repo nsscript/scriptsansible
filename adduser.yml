@@ -1,6 +1,3 @@
-- name: Create user
-  hosts: "{{ hosts }}"
-  tasks:
     - name: hello
       user:
        name: "{{ username }}"

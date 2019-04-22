@@ -3,5 +3,6 @@
   tasks:
     - name: Desliga_VSI
       command: '/bin/bash echo " " | ibmcloud login --apikey {{ apikey }}'
-      command: '/bin/bash /scripts/list_vsi.sh'
+      command: 'ibmcloud sl vs list'
+      command: 'ibmcloud logout'
  

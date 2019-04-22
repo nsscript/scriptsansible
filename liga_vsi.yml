@@ -1,0 +1,5 @@
+- name: Desliga_VSI
+  hosts: all
+  tasks:
+    - name: Desliga_VSI
+      shell: '/scripts/./poweron_vsi.sh'

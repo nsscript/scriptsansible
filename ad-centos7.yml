@@ -1,0 +1,48 @@
+- name: Ad-centos7
+  hosts: all
+  tasks:
+    - name: Install the required packages
+      yum:
+        name: realmd,sssd,oddjob,oddjob-mkhomedir,adcli,samba-common,samba-common-tools,ntpdate,ntp,python-pip
+        state: present
+      notify:
+        - restart realmd
+
+    - name: Install pexpect using pip
+      pip:
+        name: pexpect
+
+    - name: Join system to AD and add the computer object in the Linux OU
+      expect:
+        command: /bin/bash -c "/usr/sbin/realm join --user={{ username }} --computer-ou=OU=DIVERSOS,OU=SERVIDORES,DC=NSCLOUD,DC=SL,DC=NET nscloud.sl.net"
+        responses:
+          Password for *: "{{ password }}"
+
+    - name: Add default_domain_suffix to sssd.conf
+      lineinfile:
+        dest: /etc/sssd/sssd.conf
+        line: 'default_domain_suffix = nscloud.sl.net'
+        insertafter: '^\[sssd\]'
+      notify:
+        - restart sssd
+
+    - name: Allow the LinuxAdmins AD group to logon to the system
+      command: /bin/bash -c "/usr/sbin/realm permit -g linuxAdmins@nscloud.sl.net"
+
+    - name: Add the LinuxAdmins AD Group to sudoers
+      lineinfile:
+        dest: /etc/sudoers
+        line: '%linuxadmins@nscloud.sl.net        ALL=(ALL)       ALL'
+        insertafter: '^%wheel'
+
+  handlers:
+    - name: restart realmd
+      service:
+        name: realmd
+        state: restarted
+
+    - name: restart sssd
+      service:
+        name: sssd
+        state: restarted
+    

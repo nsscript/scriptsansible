@@ -2,6 +2,14 @@
   hosts: all
   tasks:
   
+    - name: Install adcli sssd authconfig
+      yum:
+        name: adcli, sssd, authconfig
+        state: present
+  
+  
+  
+  
     - name: Install epel-release
       yum:
         name: epel-release

@@ -1,6 +1,12 @@
 - name: Ad-centos7
   hosts: all
   tasks:
+  
+    - name: Install epel-release
+      yum:
+        name: epel-release
+        state: present
+  
     - name: Install the required packages
       yum:
         name: realmd,epel-release,sssd,oddjob,oddjob-mkhomedir,adcli,samba-common,samba-common-tools,ntpdate,ntp,python-pip

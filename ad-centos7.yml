@@ -14,6 +14,14 @@
       yum:
         name: epel-release
         state: present
+        
+        
+    - name: Install python-mod
+      yum:
+        name: python-pip
+        state: present
+        
+        
   
         
     - name: Join system to AD and add the computer object in the Linux OU

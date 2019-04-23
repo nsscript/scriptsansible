@@ -33,8 +33,7 @@
     
           
     - name: Atualizando e configurando a autenticação
-      expect:
-        command: authconfig --enablesssd --enablesssdauth --enablemkhomedir --update
+      command: authconfig --enablesssd --enablesssdauth --enablemkhomedir --update
         
    
          

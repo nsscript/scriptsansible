@@ -14,7 +14,7 @@
         responses:
           Password for *: "{{ password }}"
   
-    - name: Copy a new file
+    - name: Copy a new file krb5.conf
       copy:
         src: /files/krb5.conf
         dest: /etc/krb5.conf
@@ -23,10 +23,10 @@
         mode: 0644
         
         
-    - name: Copy a new file
+    - name: Copy a new file sssd.conf
       copy:
-        src: /files/krb5.conf
-        dest: /etc/krb5.conf
+        src: /files/sssd.conf
+        dest: /etc/sssd.conf
         owner: root
         group: root
         mode: 0644

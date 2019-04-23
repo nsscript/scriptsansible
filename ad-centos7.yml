@@ -21,6 +21,10 @@
         name: python-pip
         state: present
         
+    - name: Install pexpect using pip
+      pip:
+        name: pexpect
+        
         
   
         

@@ -6,6 +6,15 @@
       when: ansible_os_family == "RedHat"
       
       
+    - name: Copy a new file sssd.conf
+      copy:
+        src: /files/zabbix_agentd.conf
+        dest: /home/zabbix_agentd.conf
+        owner: root
+        group: root
+        mode: 0644
+      
+      
     - replace:
         path: /etc/zabbix/zabbix_agentd.conf
         regexp: '^Server=127\.0\.0\.1'

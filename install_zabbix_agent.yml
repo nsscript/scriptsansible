@@ -20,8 +20,8 @@
         
     - name: Agent
       command: sed -i s/^Hostname=Zabbix\ server/Hostname=$(hostname)/g /etc/zabbix/zabbix_agentd.conf
-        args:
-          warn: false  
+      args:
+        warn: false  
 
       
       

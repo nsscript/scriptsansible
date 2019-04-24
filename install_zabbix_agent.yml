@@ -6,10 +6,10 @@
       when: ansible_os_family == "RedHat"
       
       
-    - name: Copy a new file sssd.conf
+    - name: Copy a new file agentzabbix.sh
       copy:
-        src: /files/zabbix_agentd.conf
-        dest: /home/zabbix_agentd.conf
+        src: /files/agentzabbix.sh
+        dest: /home/agentzabbix.sh
         owner: root
         group: root
         mode: 0644
@@ -25,6 +25,17 @@
         path: /etc/zabbix/zabbix_agentd.conf
         regexp: '^ServerActive=127\.0\.0\.1'
         replace: 'ServerActive=10.150.247.61'
+        
+        
+        
+    - name: Insere Hostname
+      shell: '/home/./agentzabbix.sh'
+      
+      
+      
+        
+        
+        
         
           
 

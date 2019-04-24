@@ -1,8 +1,18 @@
-- name: Adduser
+- name: Install Zabbix Agent
   hosts: all
   tasks:
-    - name: Add repository
+    - name: Install Zabbix Agent
       yum_repository:
-        name: epel
-        description: EPEL YUM repo
-        baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+        name: zabbix
+        description: Zabbix Official Repository - $basearch
+        baseurl: http://repo.zabbix.com/zabbix/3.4/rhel/7/$basearch/
+        gpgcheck: yes
+        
+    - name: Install Zabbix Agent
+      yum_repository:
+        name: zabbix-non-supported
+        description: Zabbix Official Repository non-supported - $basearch
+        baseurl: http://repo.zabbix.com/non-supported/rhel/7/$basearch/
+        gpgcheck: yes
+        
+        

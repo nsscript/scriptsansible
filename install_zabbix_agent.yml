@@ -2,17 +2,7 @@
   hosts: all
   tasks:
     - name: Install Zabbix Agent
-      yum_repository:
-        name: zabbix
-        description: Zabbix Official Repository - $basearch
-        baseurl: http://repo.zabbix.com/zabbix/3.4/rhel/7/$basearch/
-        gpgcheck: yes
-        
-    - name: Install Zabbix Agent
-      yum_repository:
-        name: zabbix-non-supported
-        description: Zabbix Official Repository non-supported - $basearch
-        baseurl: http://repo.zabbix.com/non-supported/rhel/7/$basearch/
-        gpgcheck: yes
+      yum: name=https://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-agent-3.4.2-1.el7.x86_64.rpm
+  
         
         

@@ -4,5 +4,22 @@
     - name: Install Zabbix Agent
       yum: name=https://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-agent-3.4.2-1.el7.x86_64.rpm
       when: ansible_os_family == "RedHat"
+      
+      
+    - lineinfile:
+      path: /etc/zabbix/zabbix_agentd.conf
+      regexp: '^Server=127\.0\.0\.1'
+      line: 'Server=10.150.247.61'
+      
+      
+    - lineinfile:
+      path: /etc/zabbix/zabbix_agentd.conf
+      regexp: '^ServerActive=127\.0\.0\.1'
+      line: 'ServerActive=10.150.247.61'
+      
+      
+      
+      
+           
         
         

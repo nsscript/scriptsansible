@@ -37,12 +37,12 @@
       
       
       
-      handlers:
-      - name: restart zabbix
-        service: name=zabbix-agent state=restarted
+  handlers:
+    - name: restart zabbix
+      service: name=zabbix-agent state=restarted
       
-      - name: start zabbix
-        service: name=zabbix-agent state=started
+    - name: start zabbix
+      service: name=zabbix-agent state=started
       
       
         

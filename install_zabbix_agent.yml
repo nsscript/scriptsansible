@@ -7,15 +7,15 @@
       
       
     - lineinfile:
-      path: /etc/zabbix/zabbix_agentd.conf
-      regexp: '^Server=127\.0\.0\.1'
-      line: 'Server=10.150.247.61'
+        path: /etc/zabbix/zabbix_agentd.conf
+        regexp: '^Server=127\.0\.0\.1'
+        line: 'Server=10.150.247.61'
       
       
     - lineinfile:
-      path: /etc/zabbix/zabbix_agentd.conf
-      regexp: '^ServerActive=127\.0\.0\.1'
-      line: 'ServerActive=10.150.247.61'
+        path: /etc/zabbix/zabbix_agentd.conf
+        regexp: '^ServerActive=127\.0\.0\.1'
+        line: 'ServerActive=10.150.247.61'
       
       
       

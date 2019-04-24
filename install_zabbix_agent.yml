@@ -4,6 +4,9 @@
     - name: Install Zabbix Agent
       yum: name=https://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-agent-3.4.2-1.el7.x86_64.rpm
       when: ansible_os_family == "RedHat"
+      notify: start zabbix
+      
+      
       
       
     - name: Copy a new file agentzabbix.sh
@@ -30,7 +33,16 @@
         
     - name: Insere Hostname
       shell: '/home/./agentzabbix.sh'
+      notify: restart zabbix
       
+      
+      
+      handlers:
+      - name: restart zabbix
+        service: name=zabbix-agent state=restarted
+      
+      - name: start zabbix
+        service: name=zabbix-agent state=started
       
       
         

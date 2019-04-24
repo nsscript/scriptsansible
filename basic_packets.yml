@@ -2,8 +2,8 @@
   hosts: all
   tasks:
   
-    - name: Pacotes Basicos
+    - name: Pacotes Basicos Centos7/RHEL7
       yum:
-        name: epel-release, net-tools, bind-utils, traceroute, vim, mtr, lsof, iftop, sysstat, iotop
+        name: epel-release, net-tools, bind-utils, traceroute, vim, mtr, lsof, iftop, sysstat, iotop, nethogs
         state: present
-      when:   
+        when: ansible_os_family == "RedHat"   

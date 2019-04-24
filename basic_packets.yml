@@ -1,0 +1,9 @@
+- name: Pacotes Basicos
+  hosts: all
+  tasks:
+  
+    - name: Pacotes Basicos
+      yum:
+        name: epel-release, net-tools, bind-utils, traceroute, vim, mtr, lsof, iftop, sysstat, iotop
+        state: present
+      when:   

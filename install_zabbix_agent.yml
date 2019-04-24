@@ -3,7 +3,6 @@
   tasks:
     - name: Install Zabbix Agent
       yum: name=https://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-agent-3.4.2-1.el7.x86_64.rpm
-      state: absent
-  
+      when: ansible_os_family == "RedHat"
         
         

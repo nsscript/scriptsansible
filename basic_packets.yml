@@ -1,4 +1,5 @@
 - name: Pacotes Basicos
+  hosts: 1.1.1.1
   tasks:
   
     - name: Pacotes Basicos Centos7/RHEL7

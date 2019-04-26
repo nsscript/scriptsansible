@@ -1,5 +1,5 @@
 - name: Adduser
-  hosts: {{ hosts }}
+  hosts: all
   tasks:
     - name: Adduser
       user:

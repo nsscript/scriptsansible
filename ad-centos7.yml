@@ -1,5 +1,5 @@
 - name: Ad-centos7
-  hosts: all
+  hosts: {{ hosts }}
   tasks:
   
     - name: Install adcli sssd authconfig

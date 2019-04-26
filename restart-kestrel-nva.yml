@@ -1,5 +1,4 @@
 - name: Restart Kestrel-nva
-  hosts: {{ hosts }}
   tasks:
   - name: Restart Kestrel-nva
     service:

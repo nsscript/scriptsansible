@@ -1,5 +1,5 @@
 - name: remove_user
-  hosts: all
+  hosts: {{ hosts }}
   tasks:
     - name: remove_user
       user:

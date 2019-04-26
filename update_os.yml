@@ -1,5 +1,4 @@
 - name: upgrade all packages
-  hosts: {{ hosts }}
   tasks:
     - name: upgrade all packages
       yum: name=* state=latest

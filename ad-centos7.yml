@@ -46,7 +46,7 @@
     - name: Copy a new file sssd.conf
       copy:
         src: /files/sssd.conf
-        dest: /etc/sssd.conf
+        dest: /etc/sssd/sssd.conf
         owner: root
         group: root
         mode: 0644

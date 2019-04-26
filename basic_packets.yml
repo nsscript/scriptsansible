@@ -1,5 +1,4 @@
 - name: Pacotes Basicos
-  hosts: {{ hosts }}
   tasks:
   
     - name: Pacotes Basicos Centos7/RHEL7

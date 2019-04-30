@@ -1,9 +1,0 @@
-- name: Desliga_VSI
-  hosts: all
-  tasks:
-    - name: Desliga_VSI
-      shell: '/scripts/./shutdown_vsi.sh'
-
-      
-   
- 

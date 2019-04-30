@@ -1,8 +1,0 @@
-- name: remove_user
-  hosts: all
-  tasks:
-    - name: remove_user
-      user:
-       name: "{{ username }}"
-       state: absent
-       

@@ -1,7 +1,0 @@
-- name: Restart Kestrel-nva
-  hosts: all
-  tasks:
-  - name: Restart Kestrel-nva
-    service:
-      name: kestrel-nva
-      state: restarted
